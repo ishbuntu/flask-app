@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add a New Task</h2>
+<form action="{{ url_for('add_task') }}" method="POST">
+    <label for="content">Task:</label>
+    <input type="text" id="content" name="content" required>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <button type="submit">Add Task</button>
+</form>
+{% endblock %}

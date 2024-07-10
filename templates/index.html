@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Your Tasks</h2>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <strong>{{ task.date }}:</strong> {{ task.content }}
+        <a href="{{ url_for('delete_task', task_id=loop.index0) }}">Delete</a>
+    </li>
+    {% else %}
+    <li>No tasks yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}
